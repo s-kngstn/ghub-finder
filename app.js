@@ -23,12 +23,16 @@ searchUser.addEventListener('keyup', (e) => {
       //console.log(data);
       if (data.profile.message === 'Not Found') {
         // Show an alert that says the user is not found (UI)
+        ui.showAlert('User not found', 'alert alert-danger');
       } else {
         // Show user profile (UI)
         ui.showProfile(data.profile);
+        // Show user repos
+        ui.showRepos(data.repos);
       }
     });
   } else {
     // Clear profile (UI)
+    ui.clearProfile();
   }
 });
